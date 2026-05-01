@@ -33,14 +33,18 @@ public class SQLTree<T extends SQLTreeBean<T>> extends Tree<T> {
 			c = SQLTreeBean.getConnection();
 			this.loadChildren(root, element.getSubList());
 		} catch (Exception e) {
-			logger.error(e);
+			if (logger.isErrorEnabled()) {
+				logger.error(e);
+			}
 		} finally {
 			try {
 				if (c != null) {
 					c.close();
 				}
 			} catch (SQLException e) {
-				logger.error(e);
+				if (logger.isErrorEnabled()) {
+					logger.error(e);
+				}
 			}
 		}
 

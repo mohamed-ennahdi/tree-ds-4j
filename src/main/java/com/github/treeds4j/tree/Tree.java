@@ -36,7 +36,7 @@ import com.github.treeds4j.tree.bean.TreeBean;
 public abstract class Tree<T extends TreeBean<T>> {
 	
 	private static final Logger logger = LogManager.getLogger(Tree.class);
-	static StringBuffer sb = new StringBuffer();
+	static StringBuilder sb = new StringBuilder();
     
 	public Tree() {
 	}
@@ -51,18 +51,19 @@ public abstract class Tree<T extends TreeBean<T>> {
     private static void traverse(Node<?> obj, int indentLevel) {
 		if (obj != null) {
 			for (int i = 0; i < obj.getChildren().size(); i++) {
-				StringBuffer indentation = Tree.toIndent(indentLevel);
+				StringBuilder indentation = Tree.toIndent(indentLevel);
 				indentation.append(obj.getChildren().get(i).getData());
-				logger.info(indentation.toString());
+				if (logger.isInfoEnabled()) {
+					logger.info(indentation.toString());
+				}
 				traverse(obj.getChildren().get(i), indentLevel + 1);
 			}
 		}
 	}
     
-    public static StringBuffer toIndent(int indentLevel) {
-    	StringBuffer sb = new StringBuffer();
+    public static StringBuilder toIndent(int indentLevel) {
+    	StringBuilder sb = new StringBuilder();
     	for (int j = 0; j < indentLevel; j++) {
-//    		logger.info("\t");
     		sb.append("\t");
 		}
     	return sb;

@@ -12,8 +12,6 @@ CREATE TABLE `EMPLOYEES` (
   `manager_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`emp_no`),
   KEY `FK_EMPLOYEES` (`manager_id`)
--- ,
---  CONSTRAINT `FK_EMPLOYEES` FOREIGN KEY (`manager_id`) REFERENCES `EMPLOYEES` (`emp_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*
@@ -21,7 +19,7 @@ CREATE TABLE `EMPLOYEES` (
 from EMPLOYEES
 -- Date: 2018-08-23 21:33
 */
-INSERT INTO `EMPLOYEES` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`,`manager_id`) VALUES (10001,'1953-09-02','Georgi','Facello','M','1986-06-26',NULL);
+INSERT INTO `EMPLOYEES` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`,`manager_id`) VALUES (10001,'1953-09-02','Georgi','Facello','M','1986-06-26',null);
 INSERT INTO `EMPLOYEES` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`,`manager_id`) VALUES (10002,'1964-06-02','Bezalel','Simmel','F','1985-11-21',null);
 INSERT INTO `EMPLOYEES` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`,`manager_id`) VALUES (10003,'1959-12-03','Parto','Bamford','M','1986-08-28',10002);
 INSERT INTO `EMPLOYEES` (`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`,`manager_id`) VALUES (10004,'1954-05-01','Chirstian','Koblick','M','1986-12-01',10003);

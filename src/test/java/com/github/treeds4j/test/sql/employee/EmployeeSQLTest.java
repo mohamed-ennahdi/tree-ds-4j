@@ -1,5 +1,8 @@
 package com.github.treeds4j.test.sql.employee;
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -31,19 +34,20 @@ class EmployeeSQLTest {
             .withInitScript("ddl/employees_script.sql"); // Runs once at container startup
 	
 	@Test
-	void test() {
-		
-		logger.info("testing");
-		
-		
-		try (Connection sqlConnection = DriverManager.getConnection(
-                mysql.getJdbcUrl(),      // jdbc:mysql://localhost:32789/testdb
-                mysql.getUsername(),     // testuser
-                mysql.getPassword())) {
+	void traversalTest() {
+		try (Connection sqlConnection = DriverManager.getConnection(mysql.getJdbcUrl(),mysql.getUsername(),mysql.getPassword())) {
 			Node<EmployeeSQL> d = new SQLTree<EmployeeSQL>().loadTree(new EmployeeSQL(sqlConnection));
 			Tree.traverse(d);
+
+			assertTrue(d.getChildren().get(0).getChildren().isEmpty());
+			assertEquals(10002, d.getChildren().get(1).getChildren().get(0).getData().getManagerId());
+			assertEquals(10007, d.getChildren().get(1).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getData().getManagerId());
+			assertEquals(10007, d.getChildren().get(1).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(1).getData().getManagerId());
+			assertEquals(10007, d.getChildren().get(1).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(0).getChildren().get(2).getData().getManagerId());
 		} catch (SQLException e) {
-			logger.error("", e);
+			if (logger.isErrorEnabled()) {
+				logger.error("", e);
+			}
 		}
 	}
 	
