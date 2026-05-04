@@ -1,12 +1,12 @@
-package com.github.treeds4j.tree;
+package com.github.mohamedennahdi.treeds4j.tree;
 
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.bean.TreeBean;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.bean.TreeBean;
 /**
  * 
  * @author ENNAHDI EL IDRISSI, Mohamed
@@ -34,7 +34,7 @@ public abstract class Tree<T extends TreeBean<T>> {
 	private static final Logger logger = LogManager.getLogger(Tree.class);
 	static StringBuilder sb = new StringBuilder();
     
-	public Tree() {
+	protected Tree() {
 	}
 	
 	public abstract Node<T> loadTree(T element);

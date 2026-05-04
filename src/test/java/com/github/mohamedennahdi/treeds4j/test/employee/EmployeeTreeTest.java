@@ -1,14 +1,16 @@
-package com.github.treeds4j.test.employee;
+package com.github.mohamedennahdi.treeds4j.test.employee;
+
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.Tree;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.Tree;
 
-public class EmployeeTreeTest {
+class EmployeeTreeTest {
 	
 	public List<Employee> employees = new ArrayList<Employee>() {
 		private static final long serialVersionUID = 1L;
@@ -32,8 +34,11 @@ public class EmployeeTreeTest {
 	};
 	
 	@Test
-	public void test() {
+	void InMemoryTreeTest() {
 		Node<Employee> d = new EmployeeTree(employees).loadTree(new Employee());
 		Tree.traverse(d);
+		
+		assertEquals("Miftah Mohamed", d.getChildren().get(0).getChildren().get(2).getData().name);
+		assertEquals("VP", d.getChildren().get(0).getChildren().get(2).getData().title);
 	}
 }

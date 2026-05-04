@@ -1,4 +1,4 @@
-package com.github.treeds4j.tree.bean;
+package com.github.mohamedennahdi.treeds4j.tree.bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public abstract class InMemoryTreeBean<T> extends TreeBean<T> {
 
 	@Override
 	public List<T> getSubList() {
-		List<T> list = new ArrayList<T>();
+		List<T> list = new ArrayList<>();
 		
 		for (T d : originalList) {
 			if (subListComparison(d)) {

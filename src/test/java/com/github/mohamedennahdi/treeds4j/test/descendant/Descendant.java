@@ -1,6 +1,6 @@
-package com.github.treeds4j.test.descendant;
+package com.github.mohamedennahdi.treeds4j.test.descendant;
 
-import com.github.treeds4j.tree.bean.InMemoryTreeBean;
+import com.github.mohamedennahdi.treeds4j.tree.bean.InMemoryTreeBean;
 
 public class Descendant extends InMemoryTreeBean<Descendant> {
     String name;

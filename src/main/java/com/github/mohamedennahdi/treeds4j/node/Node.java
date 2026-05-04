@@ -1,4 +1,4 @@
-package com.github.treeds4j.node;
+package com.github.mohamedennahdi.treeds4j.node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * 
  */
 public class Node<T> {
-    private List<Node<T>> children = new ArrayList<Node<T>>();
+    private List<Node<T>> children = new ArrayList<>();
     private Node<T> parent = null;
     private T data = null;
     
@@ -40,7 +40,7 @@ public class Node<T> {
     }
 
     public void addChild(T data) {
-        Node<T> child = new Node<T>(data);
+        Node<T> child = new Node<>(data);
         child.setParent(this);
         this.children.add(child);
     }
