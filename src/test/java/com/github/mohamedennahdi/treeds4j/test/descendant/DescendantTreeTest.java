@@ -1,14 +1,16 @@
-package com.github.treeds4j.test.descendant;
+package com.github.mohamedennahdi.treeds4j.test.descendant;
+
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.Tree;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.Tree;
 
-public class DescendantTreeTest {
+class DescendantTreeTest {
 	
 	public List<Descendant> descendants = new ArrayList<Descendant>() {
 		private static final long serialVersionUID = 1L;
@@ -30,8 +32,10 @@ public class DescendantTreeTest {
 	};
 	
 	@Test
-	public void test() {
+	void InMemoryTreeTest() {
 		Node<Descendant> d = new DescendantTree(descendants).loadTree(new Descendant());
 		Tree.traverse(d);
+		
+		assertEquals("Edward", d.getChildren().get(0).getChildren().get(2).getData().name);
 	}
 }

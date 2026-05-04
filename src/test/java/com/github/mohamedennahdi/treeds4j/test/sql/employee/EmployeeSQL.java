@@ -1,4 +1,4 @@
-package com.github.treeds4j.test.sql.employee;
+package com.github.mohamedennahdi.treeds4j.test.sql.employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,10 +8,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.github.treeds4j.tree.bean.SQLTreeBean;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.github.mohamedennahdi.treeds4j.tree.bean.SQLTreeBean;
 
 
 public class EmployeeSQL extends SQLTreeBean<EmployeeSQL> {
+	
+	private final Logger logger = LogManager.getLogger(getClass());
+	
 	Integer id;
 	String firstName;
 	String lastName;
@@ -89,10 +95,7 @@ public class EmployeeSQL extends SQLTreeBean<EmployeeSQL> {
 		sql.append("	WHERE	MANAGER_ID	").append("	=	").append("	?	");
 		sql.append("	OR 	   (MANAGER_ID IS NULL AND ? IS NULL)	");
 		
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		try {
-			ps = getConnection().prepareStatement(sql.toString());
+		try (PreparedStatement ps = getConnection().prepareStatement(sql.toString())){
 			if (this.id == null) {
 				ps.setNull(1, java.sql.Types.INTEGER);
 				ps.setNull(2, java.sql.Types.INTEGER);
@@ -100,29 +103,16 @@ public class EmployeeSQL extends SQLTreeBean<EmployeeSQL> {
 				ps.setInt(1, this.id);
 				ps.setInt(2, this.id);
 			}
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				 emps.add(new EmployeeSQL(rs));
+			try (ResultSet rs = ps.executeQuery();) {
+				while (rs.next()) {
+					 emps.add(new EmployeeSQL(rs));
+				}
+			} catch (SQLException e) {
+				logger.error("Resultset error", e);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (ps != null) {
-				try {
-					ps.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			logger.error("PrparedStatement error", e);
 		}
-		
 		
 		return emps;
 	}

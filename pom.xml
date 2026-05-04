@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.mohamed-ennahdi</groupId>
 	<artifactId>tree-ds-4j</artifactId>
-	<version>2.2</version>
+	<version>2.3</version>
 	<name>Tree Data Structure for Java</name>
 	<url>https://github.com/mohamed-ennahdi/tree-ds-4j</url>
 	<description>This API allows to fill multi-children tree data structure
@@ -18,7 +18,8 @@
 		<tag>HEAD</tag>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
 	<developers>
 		<developer>

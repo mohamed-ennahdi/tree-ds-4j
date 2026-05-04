@@ -1,9 +1,9 @@
-package com.github.treeds4j.test.descendant;
+package com.github.mohamedennahdi.treeds4j.test.descendant;
 
 import java.util.List;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.InMemoryTree;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.InMemoryTree;
 
 public class DescendantTree extends InMemoryTree<Descendant> {
 
