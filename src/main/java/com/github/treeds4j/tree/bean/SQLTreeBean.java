@@ -8,14 +8,14 @@ import java.sql.SQLException;
  * @version
  * <p>
  * 		Since 2.0, August 2018
- * 		<p>
- * 			Introducing InMemoryTree and SQLTree classes.
- * 			<br />
- * 			The former allows to handle a list of elements with coherent relationships with each other.
- * 			<br />
- * 			The latter handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
- * 			in a Unary Relation within an SQL table.
- * 		</p>
+ * </p>
+ * <p>
+ * 		Introducing InMemoryTree and SQLTree classes.
+ * 		<br />
+ * 		The former allows to handle a list of elements with coherent relationships with each other.
+ * 		<br />
+ * 		The latter handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
+ * 		in a Unary Relation within an SQL table.
  * </p>
  *
  */

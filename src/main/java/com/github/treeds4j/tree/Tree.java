@@ -16,20 +16,16 @@ import com.github.treeds4j.tree.bean.TreeBean;
  * </p>
  * <p>
  * 		1.1, July 2018
- * 		<p>
- * 			Enhancement of traverse method.
- * 		</p> 
+ *		Enhancement of traverse method.
  * </p>
  * <p>
  * 		2.0, August 2018
- * 		<p>
- * 			Adaptation due to the introducing InMemoryTree and SQLTree classes.
- * 			<br />
- * 			The former allows to handle a list of elements with coherent relationships with each other.
- * 			<br />
- * 			The latter handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
- * 			in a Unary Relation within an SQL table.
- * 		</p>
+ * 		Adaptation due to the introducing InMemoryTree and SQLTree classes.
+ * 		<br />
+ * 		The former allows to handle a list of elements with coherent relationships with each other.
+ * 		<br />
+ * 		The latter handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
+ * 		in a Unary Relation within an SQL table.
  * </p>
  *
  */

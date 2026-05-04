@@ -2,14 +2,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.ennahdi</groupId>
+	<groupId>io.github.mohamed-ennahdi</groupId>
 	<artifactId>tree-ds-4j</artifactId>
-	<version>2.2-SNAPSHOT</version>
+	<version>2.2</version>
 	<name>Tree Data Structure for Java</name>
 	<url>https://github.com/mohamed-ennahdi/tree-ds-4j</url>
 	<description>This API allows to fill multi-children tree data structure
 		based on a coherent input (text) or from relational database (unary
 		relationship).</description>
+	<scm>
+		<connection>scm:git:https://github.com/mohamedennahdi/tree-ds-4j.git</connection>
+		<developerConnection>
+			scm:git:https://github.com/mohamedennahdi/tree-ds-4j.git</developerConnection>
+		<url>https://github.com/mohamedennahdi/tree-ds-4j</url>
+		<tag>HEAD</tag>
+	</scm>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -86,4 +93,69 @@
 			<version>2.18.1</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.9.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.11.2</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.2.7</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+						<configuration>
+							<!-- Prevents "gpg: signing failed: Inappropriate
+							ioctl for device" errors -->
+							<gpgArguments>
+								<arg>--pinentry-mode</arg>
+								<arg>loopback</arg>
+							</gpgArguments>
+							<!-- Required for newer GPG versions -->
+							<passphraseServerId>gpg.passphrase</passphraseServerId>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

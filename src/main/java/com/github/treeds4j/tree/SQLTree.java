@@ -15,12 +15,12 @@ import org.apache.logging.log4j.Logger;
  * @version
  * <p>
  * 		Since 2.0, August 2018
- * 		<p>
- * 			Introducing SQLTree class.
- * 			<br />
- * 			It handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
- * 			in a Unary Relation within an SQL table.
- * 		</p>
+ * 	</p>
+ * <p>
+ * 		Introducing SQLTree class.
+ * 		<br />
+ * 		It handles data directly from the database, taking advantage of Primary Keys and Foreigns keys
+ * 		in a Unary Relation within an SQL table.
  * </p>
  * 
  */
