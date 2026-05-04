@@ -1,4 +1,4 @@
-package com.github.treeds4j.test.sql.employee;
+package com.github.mohamedennahdi.treeds4j.test.sql.employee;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,9 +15,9 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.SQLTree;
-import com.github.treeds4j.tree.Tree;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.SQLTree;
+import com.github.mohamedennahdi.treeds4j.tree.Tree;
 
 
 @Testcontainers

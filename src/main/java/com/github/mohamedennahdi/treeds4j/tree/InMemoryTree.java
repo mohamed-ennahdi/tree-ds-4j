@@ -1,9 +1,9 @@
-package com.github.treeds4j.tree;
+package com.github.mohamedennahdi.treeds4j.tree;
 
 import java.util.List;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.bean.InMemoryTreeBean;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.bean.InMemoryTreeBean;
 /**
  * 
  * @author ENNAHDI EL IDRISSI, Mohamed
@@ -25,13 +25,13 @@ public abstract class InMemoryTree<T extends InMemoryTreeBean<T>> extends Tree<T
 
 	private List<T> originalList;
 	
-	public InMemoryTree(List<T> originalList) {
+	protected InMemoryTree(List<T> originalList) {
 		this.originalList = originalList;
 	}
 	
 	
 	public Node<T> loadTree(T element) {
-		Node<T> root = new Node<T>(element, null);
+		Node<T> root = new Node<>(element, null);
 
 		this.loadChildren(root, originalList);
 
@@ -42,7 +42,7 @@ public abstract class InMemoryTree<T extends InMemoryTreeBean<T>> extends Tree<T
 		if (list != null && !list.isEmpty()) {
 			for (T element : list) {
 				if (loadChildrenComparison(element, parent)) {
-					Node<T> nextParent = new Node<T>(element, parent);
+					Node<T> nextParent = new Node<>(element, parent);
 					if (element.getOriginalList() == null) {
 						element.setOriginalList(originalList);
 					}

@@ -1,4 +1,4 @@
-package com.github.treeds4j.tree.bean;
+package com.github.mohamedennahdi.treeds4j.tree.bean;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,10 +23,10 @@ public abstract class SQLTreeBean<T> extends TreeBean<T> {
 	
 	private static Connection connection;
 	
-	public SQLTreeBean() throws SQLException {
+	protected SQLTreeBean() throws SQLException {
 	}
 	
-	public SQLTreeBean(Connection connection) {
+	protected SQLTreeBean(Connection connection) {
 		setConnection(connection);
 	}
 	

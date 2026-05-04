@@ -1,4 +1,4 @@
-package com.github.treeds4j.tree.bean;
+package com.github.mohamedennahdi.treeds4j.tree.bean;
 
 import java.util.List;
 /**
@@ -21,7 +21,7 @@ import java.util.List;
  * </p>
  */
 public abstract class TreeBean<T> {
-	public TreeBean() {
+	protected TreeBean() {
 	}
 	
 	public abstract List<T> getSubList();

@@ -1,9 +1,9 @@
-package com.github.treeds4j.test.employee;
+package com.github.mohamedennahdi.treeds4j.test.employee;
 
 import java.util.List;
 
-import com.github.treeds4j.node.Node;
-import com.github.treeds4j.tree.InMemoryTree;
+import com.github.mohamedennahdi.treeds4j.node.Node;
+import com.github.mohamedennahdi.treeds4j.tree.InMemoryTree;
 
 public class EmployeeTree extends InMemoryTree<Employee> {
 
