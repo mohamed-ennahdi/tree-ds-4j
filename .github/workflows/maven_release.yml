@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
         # For central server authentication
         server-id: central
-        server-username: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+        server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
         server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
         # GPG setup
         gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -45,7 +45,7 @@ jobs:
           <servers>
             <server>
               <id>central</id>
-              <username>${env.MAVEN_CENTRAL_PASSWORD}</username>
+              <username>${env.MAVEN_CENTRAL_USERNAME}</username>
               <password>${env.MAVEN_CENTRAL_PASSWORD}</password>
             </server>
             <server>
