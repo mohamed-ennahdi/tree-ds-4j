@@ -25,6 +25,9 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
+        # GPG setup
+        gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+        gpg-passphrase: GPG_PASSPHRASE
         cache: maven
     - name: Configure Git user
       run: |
