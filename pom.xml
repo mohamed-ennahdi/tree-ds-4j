@@ -11,10 +11,10 @@
 		based on a coherent input (text) or from relational database (unary
 		relationship).</description>
 	<scm>
-		<connection>scm:git:https://github.com/mohamedennahdi/tree-ds-4j.git</connection>
+		<connection>scm:git:https://github.com/mohamed-ennahdi/tree-ds-4j.git</connection>
 		<developerConnection>
-			scm:git:https://github.com/mohamedennahdi/tree-ds-4j.git</developerConnection>
-		<url>https://github.com/mohamedennahdi/tree-ds-4j</url>
+			scm:git:https://github.com/mohamed-ennahdi/tree-ds-4j.git</developerConnection>
+		<url>https://github.com/mohamed-ennahdi/tree-ds-4j</url>
 		<tag>HEAD</tag>
 	</scm>
 	<properties>
