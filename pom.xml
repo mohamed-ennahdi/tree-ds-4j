@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.mohamed-ennahdi</groupId>
 	<artifactId>tree-ds-4j</artifactId>
-	<version>3.3</version>
+	<version>3.4-SNAPSHOT</version>
 	<name>Tree Data Structure for Java</name>
 	<url>https://github.com/mohamed-ennahdi/tree-ds-4j</url>
 	<description>This API allows to fill multi-children tree data structure
@@ -13,7 +13,7 @@
 		<developerConnection>
 			scm:git:https://github.com/mohamed-ennahdi/tree-ds-4j.git</developerConnection>
 		<url>https://github.com/mohamed-ennahdi/tree-ds-4j</url>
-		<tag>tree-ds-4j-3.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<properties>
 		<maven.compiler.source>21</maven.compiler.source>
